@@ -1,7 +1,7 @@
 package org.monium.api;
 
 import org.monium.api.security.CustomUserDetails;
-import org.monium.api.service.UserService;
+import org.monium.api.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
