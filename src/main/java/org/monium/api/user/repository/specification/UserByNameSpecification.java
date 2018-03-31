@@ -1,6 +1,5 @@
 package org.monium.api.user.repository.specification;
 
-import org.monium.api.core.repository.AbstractSpecification;
 import org.monium.api.user.model.User;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -8,7 +7,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.Objects;
 
-public class UserByNameSpecification extends AbstractSpecification<User> {
+public class UserByNameSpecification extends UserSpecification {
 
   private final String username;
 

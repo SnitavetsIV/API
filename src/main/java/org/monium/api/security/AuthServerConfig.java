@@ -54,7 +54,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         .scopes("read", "write", "trust")
         .accessTokenValiditySeconds(ACCESS_TOKEN_TTL)
         .refreshTokenValiditySeconds(REFRESH_TOKEN_TTL)
-        .secret("Monium-Snitavets-Android-Secret");
+        // Monium-Snitavets-Android-Secret
+        .secret("$2a$10$QfkCSUyOUdrbLc3QjpEWwOwX9ZMu26dhF4HMh448.jNh2baCQDZla");
   }
 
   @Bean

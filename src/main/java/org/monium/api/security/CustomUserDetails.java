@@ -9,11 +9,10 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class CustomUserDetails implements UserDetails {
+  private static final String USER_ROLE = "ROLE_USER";
   private Collection<? extends GrantedAuthority> authorities;
   private String password;
   private String username;
-
-  private static final String USER_ROLE = "ROLE_USER";
 
   public CustomUserDetails(User user) {
     this.username = user.getUsername();

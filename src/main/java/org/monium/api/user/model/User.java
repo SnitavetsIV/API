@@ -1,24 +1,32 @@
 package org.monium.api.user.model;
 
+import org.monium.api.core.model.ModelEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
+import java.util.Date;
 
-public class User {
+@Entity
+public class User extends ModelEntity {
 
-  private Long id;
-  private String username;
-  private String password;
+  @Column private String username;
+
+  @Column private String password;
+
+  @Column
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date created;
+
+  @Column
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date modified;
 
   public String getPassword() {
     return password;
-  }
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
   }
 
   public String getUsername() {
@@ -29,11 +37,9 @@ public class User {
     this.username = username;
   }
 
-  @StaticMetamodel(User.class)
-  public static class Fields {
+  public static class Fields extends ModelEntity.Fields {
 
-    public static volatile SingularAttribute<User, Long> id;
-    public static volatile SingularAttribute<User, String> username;
-    public static volatile SingularAttribute<User, String> password;
+    public final static String username = "username";
+    public final static String password = "password";
   }
 }
